@@ -1,4 +1,5 @@
 import com.sitajaf.MagicSquareGenerator;
+import com.sitajaf.exceptions.MagicSquareException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,5 +18,10 @@ public class MagicSquareGeneratorTest {
     public void shouldName() throws Exception {
         int[][] expectedValues = {{1}};
         assertThat(magicSquareGenerator.generate(1), is(expectedValues));
+    }
+
+    @Test(expected = MagicSquareException.class)
+    public void shouldNotReturnMagicSquare() throws Exception {
+        magicSquareGenerator.generate(2);
     }
 }
