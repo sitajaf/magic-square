@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+jar {
+    baseName = 'MagicNumber'
+    version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.18'
+
+    testCompile 'junit:junit:4.12'
+}
