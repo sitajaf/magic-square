@@ -1,9 +1,15 @@
 package com.sitajaf;
 
-import com.sitajaf.enums.OrderType;
 import com.sitajaf.exceptions.MagicSquareException;
+import com.sitajaf.generators.OddOrderGenerator;
 
 public class MagicSquareGenerator {
+    private OddOrderGenerator oddOrderGenerator;
+
+    public MagicSquareGenerator() {
+        oddOrderGenerator = new OddOrderGenerator();
+    }
+
     public int[][] generate(int order) throws MagicSquareException {
         if (order == 2) {
             throw new MagicSquareException("Can not generate magic of order 2");
@@ -13,19 +19,17 @@ public class MagicSquareGenerator {
             return new int[][]{{1}};
         }
 
-        OrderType orderType = determineOrderType(order);
-
-        return orderType.square(order);
-
+        return getSqaure(order);
     }
 
-    private OrderType determineOrderType(int order) {
+    private int[][] getSqaure(int order) throws MagicSquareException {
         if (order % 2 == 0) {
-            if (order % 4 == 0) {
-                return OrderType.DOUBLY_EVEN;
-            }
-            return OrderType.SINGLY_EVEN;
+//            if (order % 4 == 0) {
+//                 Doubly even
+//            }
+//            singly even
+            throw new MagicSquareException("Even Order Not yet supported!");
         }
-        return OrderType.ODD;
+        return oddOrderGenerator.get(order);
     }
 }
