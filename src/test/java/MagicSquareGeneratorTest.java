@@ -21,8 +21,18 @@ public class MagicSquareGeneratorTest {
     }
 
     @Test(expected = MagicSquareException.class)
-    public void shouldNotReturnMagicSquare() throws Exception {
+    public void shouldNotReturnMagicSquareOfOrder2() throws Exception {
         magicSquareGenerator.generate(2);
+    }
+
+    @Test(expected = MagicSquareException.class)
+    public void shouldNotReturnMagicSquareOfOrderZero() throws Exception {
+        magicSquareGenerator.generate(-5);
+    }
+
+    @Test(expected = MagicSquareException.class)
+    public void shouldNotReturnMagicSquareOfNegativeNumbers() throws Exception {
+        magicSquareGenerator.generate(-5);
     }
 
     @Test
