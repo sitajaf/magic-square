@@ -36,13 +36,12 @@ public class OddOrderGenerator {
     private void fillNext() {
         int[] nextPossiblePosition = nextPossiblePosition();
         if (this.square[nextPossiblePosition[0]][nextPossiblePosition[1]] > 0) {
-            this.currentCellRow += 1;
-            this.square[this.currentCellRow][this.currentCellColumn] = valueToFill;
+            this.currentCellRow += 1;    //just move to the row below
         } else {
-            this.square[nextPossiblePosition[0]][nextPossiblePosition[1]] = valueToFill;
             this.currentCellRow = nextPossiblePosition[0];
             this.currentCellColumn = nextPossiblePosition[1];
         }
+        this.square[this.currentCellRow][this.currentCellColumn] = valueToFill;
     }
 
     private int[] nextPossiblePosition() {

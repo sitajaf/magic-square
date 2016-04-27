@@ -15,7 +15,7 @@ public class MagicSquareGeneratorTest {
     }
 
     @Test
-    public void shouldName() throws Exception {
+    public void shouldReturnMagicSquareOfOrder1() throws Exception {
         int[][] expectedValues = {{1}};
         assertThat(magicSquareGenerator.generate(1), is(expectedValues));
     }
