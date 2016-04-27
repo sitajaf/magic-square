@@ -10,7 +10,7 @@ jar {
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.18'
 
+    compile 'org.mockito:mockito-core:2.0.52-beta'
     testCompile 'junit:junit:4.12'
 }

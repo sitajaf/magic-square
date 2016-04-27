@@ -1,16 +1,16 @@
 package com.sitajaf;
 
 import com.sitajaf.exceptions.MagicSquareException;
-import com.sitajaf.generators.OddOrderGenerator;
+import com.sitajaf.generators.SiameseGenerator;
 
-public class MagicSquareGenerator {
-    private OddOrderGenerator oddOrderGenerator;
+class MagicSquareGenerator {
+    private SiameseGenerator siameseGenerator;
 
-    public MagicSquareGenerator() {
-        oddOrderGenerator = new OddOrderGenerator();
+    MagicSquareGenerator(SiameseGenerator siameseGenerator) {
+        this.siameseGenerator = siameseGenerator;
     }
 
-    public int[][] generate(int order) throws MagicSquareException {
+    int[][] generate(int order) throws MagicSquareException {
         if (order == 2 || order <=0) {
             throw new MagicSquareException("Can not generate magic of order 2");
         }
@@ -30,6 +30,6 @@ public class MagicSquareGenerator {
 //            singly even
             throw new MagicSquareException("Even Order Not yet supported!");
         }
-        return oddOrderGenerator.get(order);
+        return siameseGenerator.get(order);
     }
 }

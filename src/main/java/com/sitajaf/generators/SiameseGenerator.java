@@ -1,6 +1,6 @@
 package com.sitajaf.generators;
 
-public class OddOrderGenerator {
+public class SiameseGenerator {
     private int[][] square;
     private int MAX_CELL;
     private int valueToFill;
