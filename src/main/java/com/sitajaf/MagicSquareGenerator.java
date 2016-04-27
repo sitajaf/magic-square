@@ -10,8 +10,12 @@ class MagicSquareGenerator {
         this.siameseGenerator = siameseGenerator;
     }
 
+    public MagicSquareGenerator() {
+        this.siameseGenerator = new SiameseGenerator();
+    }
+
     int[][] generate(int order) throws MagicSquareException {
-        if (order == 2 || order <=0) {
+        if (order == 2 || order <= 0) {
             throw new MagicSquareException("Can not generate magic of order 2");
         }
 
