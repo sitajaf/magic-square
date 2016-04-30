@@ -4,21 +4,33 @@ public class SiameseGenerator {
     private int[][] square;
     private int MAX_CELL;
     private int valueToFill;
+    private int filled = 1;
     private int currentCellRow = -1;
     private int currentCellColumn = -1;
 
     public int[][] get(int order) {
         this.valueToFill = 1;
+        return square(order);
+    }
+
+    public int[][] get(int order, int startingValue) {
+        this.valueToFill = startingValue;
+        return square(order);
+    }
+
+    private int[][] square(int order) {
         this.square = new int[order][order];
         this.MAX_CELL = order - 1;
         int noOfCellsToFill = order * order;
 
         fillFirstRowMiddleCell();
         valueToFill++;
+        this.filled++;
 
-        while (valueToFill <= noOfCellsToFill) {
+        while (this.filled <= noOfCellsToFill) {
             fillNext();
             valueToFill++;
+            filled++;
         }
 
         return square;

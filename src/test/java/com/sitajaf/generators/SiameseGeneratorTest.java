@@ -76,4 +76,14 @@ public class SiameseGeneratorTest {
         assertThat(sumOfDiagonal, is(expectedMagicNumber));
     }
 
+    @Test
+    public void shouldGenreateSquareWithDifferentStatingPoint() throws Exception {
+        int[][] expectedSquare = {
+                {11, 4, 9},
+                {6, 8, 10},
+                {7, 12, 5}
+        };
+
+        assertThat(siameseGenerator.get(3, 4), is(expectedSquare));
+    }
 }
