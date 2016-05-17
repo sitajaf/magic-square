@@ -74,20 +74,12 @@ public class StracheyGenerator {
         int offSet = order / 2;
         for (int i = 0; i <= lastMiniCellPosition; i++) {
             System.arraycopy(miniSquareA[i], 0, wholeSquare[i], 0, lastMiniCellPosition + 1);
-        }
-
-        for (int i = 0; i <= lastMiniCellPosition; i++) {
             System.arraycopy(miniSquareC[i], lastMiniCellPosition + 1 - offSet, wholeSquare[i], lastMiniCellPosition + 1, maxPosition + 1 - (lastMiniCellPosition + 1));
         }
-
         for (int i = lastMiniCellPosition + 1; i <= maxPosition; i++) {
             System.arraycopy(miniSquareB[i - offSet], lastMiniCellPosition + 1 - offSet, wholeSquare[i], lastMiniCellPosition + 1, maxPosition + 1 - (lastMiniCellPosition + 1));
-        }
-
-        for (int i = lastMiniCellPosition + 1; i <= maxPosition; i++) {
             System.arraycopy(miniSquareD[i - offSet], 0, wholeSquare[i], 0, lastMiniCellPosition + 1);
         }
-
         return wholeSquare;
     }
 
