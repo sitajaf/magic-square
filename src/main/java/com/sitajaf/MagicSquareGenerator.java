@@ -33,7 +33,7 @@ class MagicSquareGenerator {
     private int[][] getSqaure(int order) throws MagicSquareException {
         if (order % 2 == 0) {
             if (order % 4 == 0) {
-                throw new MagicSquareException("Even Order Not yet supported!");
+                throw new MagicSquareException("Doubly Even Order Not yet supported!");
             }
             return stracheyGenerator.get(order);
 
