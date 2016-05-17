@@ -20,7 +20,7 @@ class MagicSquareGenerator {
 
     int[][] generate(int order) throws MagicSquareException {
         if (order == 2 || order <= 0) {
-            throw new MagicSquareException("Can not generate magic of order 2");
+            throw new MagicSquareException("Can not generate magic of order 2 or negative number");
         }
 
         if (order == 1) {
