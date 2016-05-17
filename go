@@ -14,9 +14,9 @@ function main {
 }
 
 function run {
-    if [ ! -e ./build/libs/MagicNumber-0.0.1-SNAPSHOT.jar ]; then
-        ./gradlew assemble
-    fi
+          if [ ! -e ./build/libs/MagicNumber-0.0.1-SNAPSHOT.jar ]; then
+              ./gradlew assemble
+          fi
 
     java -jar build/libs/MagicNumber-0.0.1-SNAPSHOT.jar
 }

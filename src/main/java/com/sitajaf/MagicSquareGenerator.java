@@ -2,16 +2,20 @@ package com.sitajaf;
 
 import com.sitajaf.exceptions.MagicSquareException;
 import com.sitajaf.generators.SiameseGenerator;
+import com.sitajaf.generators.StracheyGenerator;
 
 class MagicSquareGenerator {
     private SiameseGenerator siameseGenerator;
+    private StracheyGenerator stracheyGenerator;
 
-    MagicSquareGenerator(SiameseGenerator siameseGenerator) {
+    MagicSquareGenerator(SiameseGenerator siameseGenerator, StracheyGenerator stracheyGenerator) {
         this.siameseGenerator = siameseGenerator;
+        this.stracheyGenerator = stracheyGenerator;
     }
 
-    public MagicSquareGenerator() {
+    MagicSquareGenerator() {
         this.siameseGenerator = new SiameseGenerator();
+        this.stracheyGenerator = new StracheyGenerator();
     }
 
     int[][] generate(int order) throws MagicSquareException {
@@ -28,11 +32,11 @@ class MagicSquareGenerator {
 
     private int[][] getSqaure(int order) throws MagicSquareException {
         if (order % 2 == 0) {
-//            if (order % 4 == 0) {
-//                 Doubly even
-//            }
-//            singly even
-            throw new MagicSquareException("Even Order Not yet supported!");
+            if (order % 4 == 0) {
+                throw new MagicSquareException("Even Order Not yet supported!");
+            }
+            return stracheyGenerator.get(order);
+
         }
         return siameseGenerator.get(order);
     }
